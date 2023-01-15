@@ -9,6 +9,7 @@ export const List = styled.ul`
 
 export const ListItem = styled.li`
   flex-basis: 100%;
+  align-self: stretch;
 
   @media (min-width: 768px) {
     flex-basis: calc(100% / 2 - ${p => p.theme.space[3]}px);

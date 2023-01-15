@@ -3,12 +3,13 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  align-self: stretch;
   justify-content: space-between;
   padding: ${p => p.theme.space[3]}px ${p => p.theme.space[3]}px;
   min-width: 250px;
   min-height: 50px;
-  gap: 4px;
+  width: 100%;
+  height: 100%;
+  gap: ${p => p.theme.space[3]}px;
 
   background-color: ${p => p.theme.colors.primary};
   border: 1px solid ${p => p.theme.colors.primary};
@@ -21,7 +22,6 @@ export const ContactName = styled.span`
   font-size: ${p => p.theme.fontSizes.s}px;
   color: ${p => p.theme.colors.text};
   font-weight: ${p => p.theme.fontWeights.bold};
-  min-width: 70px;
 
   @media (min-width: 768px) {
     font-size: ${p => p.theme.fontSizes.m}px;
@@ -36,7 +36,6 @@ export const ContactPhone = styled.span`
   display: inline-block;
   font-size: ${p => p.theme.fontSizes.s}px;
   color: ${p => p.theme.colors.text};
-  min-width: 70px;
 
   @media (min-width: 768px) {
     font-size: ${p => p.theme.fontSizes.m}px;

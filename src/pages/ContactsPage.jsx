@@ -13,6 +13,7 @@ import { Loader } from 'components/Loader/Loader';
 import { Modal } from 'components/Modal/Modal';
 import { ContactsForm } from 'components/ContactsForm/ContactsForm';
 import { Button } from 'components/Button/Button';
+import { WarningMessage } from 'components/WarningMessage/WarningMessage';
 
 const Contacts = () => {
   const dispatch = useDispatch();
@@ -37,7 +38,7 @@ const Contacts = () => {
         <div>There is no contacts yet</div>
       )}
       {items.length > 0 && <ContactList />}
-      {error && <div>{error}</div>}
+      {error && <WarningMessage>{error}</WarningMessage>}
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           {<ContactsForm onClose={() => setShowModal(false)} />}

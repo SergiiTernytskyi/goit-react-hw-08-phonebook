@@ -6,8 +6,10 @@ import PropTypes from 'prop-types';
 
 import { editContact } from 'redux/contacts/operations';
 import { selectContacts } from 'redux/contacts/selectors';
-import { AddButton, Error, Input, Label, StyledForm } from './EditForm.styled';
+import { EditButton, Input, Label, StyledForm } from './EditForm.styled';
 import { Title } from 'components/Title/Title';
+import { WarningMessage } from 'components/WarningMessage/WarningMessage';
+import { toast } from 'react-hot-toast';
 
 const contactsSchema = yup.object().shape({
   name: yup
@@ -31,7 +33,15 @@ export const EditForm = ({ contactId, onClose }) => {
 
   const filteredContact = contacts.find(contact => contact.id === contactId);
 
-  const submitHandler = ({ name, number }, { resetForm }) => {
+  const submitHandler = ({ name, number }) => {
+    if (
+      contacts.find(
+        contact => contact.name.toLowerCase() === name.toLowerCase().trim()
+      )
+    ) {
+      return toast.error(`${name} is already in your contacts`);
+    }
+
     dispatch(editContact({ contactId, name, number }));
     onClose();
   };
@@ -51,17 +61,17 @@ export const EditForm = ({ contactId, onClose }) => {
 
           <Label>
             Contact name
-            <Input type="text" name="name" required="required" />
+            <Input type="text" name="name" />
           </Label>
 
           <Label>
             Contact number
-            <Input type="tel" name="number" required="required" />
+            <Input type="tel" name="number" />
           </Label>
 
-          <AddButton type="submit">Confirm</AddButton>
-          <ErrorMessage component={Error} name="name" />
-          <ErrorMessage component={Error} name="number" />
+          <EditButton type="submit">Confirm</EditButton>
+          <ErrorMessage component={WarningMessage} name="name" />
+          <ErrorMessage component={WarningMessage} name="number" />
         </StyledForm>
       </Formik>
     </div>

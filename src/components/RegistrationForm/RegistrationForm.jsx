@@ -1,9 +1,8 @@
 import {
-  AddButton,
+  RegButton,
   Input,
-  InputWrapper,
-  Placeholder,
   StyledForm,
+  Label,
 } from 'components/RegistrationForm/RegisttrationForm.styled';
 import { Formik } from 'formik';
 import { useDispatch } from 'react-redux';
@@ -34,22 +33,26 @@ export const RegistrationForm = () => {
         validationSchema={registerSchema}
       >
         <StyledForm autoComplete="off">
-          <InputWrapper>
-            <Input type="text" name="name" required="required" />
-            <Placeholder>Username</Placeholder>
-          </InputWrapper>
+          <Label>
+            Username
+            <Input type="text" name="name" placeholder="Enter username" />
+          </Label>
 
-          <InputWrapper>
-            <Input type="email" name="email" required="required" />
-            <Placeholder>Email</Placeholder>
-          </InputWrapper>
+          <Label>
+            Email
+            <Input type="email" name="email" placeholder="Enter email" />
+          </Label>
 
-          <InputWrapper>
-            <Input type="password" name="password" required="required" />
-            <Placeholder>Password</Placeholder>
-          </InputWrapper>
+          <Label>
+            Password
+            <Input
+              type="password"
+              name="password"
+              placeholder="Enter password"
+            />
+          </Label>
 
-          <AddButton type="submit">Register</AddButton>
+          <RegButton type="submit">Register</RegButton>
         </StyledForm>
       </Formik>
     </>

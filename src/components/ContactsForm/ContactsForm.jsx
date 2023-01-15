@@ -6,10 +6,8 @@ import PropTypes from 'prop-types';
 
 import {
   AddButton,
-  Error,
   Input,
-  InputWrapper,
-  Placeholder,
+  Label,
   StyledForm,
   Wrapper,
 } from './ContactsForm.styled';
@@ -17,6 +15,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contacts/operations';
 import { selectContacts } from 'redux/contacts/selectors';
 import { Title } from 'components/Title/Title';
+import { WarningMessage } from 'components/WarningMessage/WarningMessage';
 
 const contactsSchema = yup.object().shape({
   name: yup
@@ -69,19 +68,24 @@ export const ContactsForm = ({ onClose }) => {
         <StyledForm autoComplete="off">
           <Title>Add contact</Title>
           <Wrapper>
-            <InputWrapper>
-              <Input type="text" name="name" required="required" />
-              <Placeholder>Contact name</Placeholder>
-            </InputWrapper>
-            <InputWrapper>
-              <Input type="tel" name="number" required="required" />
-              <Placeholder>Phone number</Placeholder>
-            </InputWrapper>
+            <Label>
+              Contact name
+              <Input type="text" name="name" placeholder="Enter contact name" />
+            </Label>
+
+            <Label>
+              Phone number
+              <Input
+                type="tel"
+                name="number"
+                placeholder="Enter contact number"
+              />
+            </Label>
           </Wrapper>
 
           <AddButton type="submit">Add contact</AddButton>
-          <ErrorMessage component={Error} name="name" />
-          <ErrorMessage component={Error} name="number" />
+          <ErrorMessage component={WarningMessage} name="name" />
+          <ErrorMessage component={WarningMessage} name="number" />
         </StyledForm>
       </Formik>
     </>

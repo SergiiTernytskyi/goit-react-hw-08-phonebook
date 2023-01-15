@@ -11,8 +11,10 @@ export const StyledForm = styled(Form)`
   margin-right: auto;
 `;
 
-export const InputWrapper = styled.div`
-  position: relative;
+export const Label = styled.label`
+  width: 100%;
+  line-height: ${p => p.theme.lineHeights.heading};
+  color: ${p => p.theme.colors.secondary};
 `;
 
 export const Input = styled(Field)`
@@ -28,36 +30,18 @@ export const Input = styled(Field)`
 
   transition: all 250ms ease-out;
 
-  :valid,
+  :hover,
   :focus {
     border: 1px solid ${p => p.theme.colors.secondary};
     outline-color: ${p => p.theme.colors.secondary};
   }
-  :valid ~ span,
-  :focus ~ span {
-    padding: 0 ${props => props.theme.space[2]}px;
-    font-size: ${props => props.theme.fontSizes.s}px;
-    font-weight: ${props => props.theme.fontWeights.bold};
-    color: ${props => props.theme.colors.secondary};
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    background-color: ${props => props.theme.colors.background};
-    border-left: 1px solid ${props => props.theme.colors.secondary};
-    border-right: 1px solid ${props => props.theme.colors.secondary};
-    transform: translateX(20px) translateY(-8px);
+
+  ::placeholder {
+    color: ${p => p.theme.colors.primary};
   }
 `;
 
-export const Placeholder = styled.span`
-  position: absolute;
-  left: 0;
-  padding: ${props => props.theme.space[2]}px;
-  pointer-events: none;
-  color: ${props => props.theme.colors.text};
-  transition: all 250ms ease-out;
-`;
-
-export const AddButton = styled.button`
+export const LoginButton = styled.button`
   align-self: center;
   width: 150px;
   height: 50px;

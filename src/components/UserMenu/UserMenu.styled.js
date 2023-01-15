@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  display: block;
-  gap: ${p => p.theme.space[3]}px;
+  display: flex;
+  flex-direction: column;
+  gap: ${p => p.theme.space[1]}px;
   align-items: center;
+  justify-content: center;
 
   @media (min-width: 768px) {
-    display: flex;
+    flex-direction: row;
     gap: ${p => p.theme.space[3]}px;
   }
 `;

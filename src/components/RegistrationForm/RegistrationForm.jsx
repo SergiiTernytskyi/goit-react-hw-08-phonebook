@@ -41,7 +41,7 @@ export const RegistrationForm = () => {
 
           <InputWrapper>
             <Input type="email" name="email" required="required" />
-            <Placeholder>E-mail</Placeholder>
+            <Placeholder>Email</Placeholder>
           </InputWrapper>
 
           <InputWrapper>

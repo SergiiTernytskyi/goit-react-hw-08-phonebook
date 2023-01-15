@@ -9,7 +9,7 @@ export const theme = {
     monospace: 'Menlo, monospace',
   },
 
-  fontSizes: { s: 12, m: 16, l: 18, xl: 22, xxl: 30 },
+  fontSizes: { s: 14, m: 16, l: 18, xl: 22, xxl: 30 },
 
   fontWeights: {
     body: 400,

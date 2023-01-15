@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
 `;
 
 export const StyledButton = styled.button`
-  width: 300px;
+  width: 250px;
   height: 45px;
   margin-bottom: ${p => p.theme.space[4]}px;
 
@@ -27,5 +27,9 @@ export const StyledButton = styled.button`
   :hover {
     color: ${p => p.theme.colors.white};
     background-color: ${p => p.theme.colors.text};
+  }
+
+  @media (min-width: 768px) {
+    width: 300px;
   }
 `;

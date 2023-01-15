@@ -35,7 +35,7 @@ export const LoginForm = () => {
         <StyledForm autoComplete="off">
           <InputWrapper>
             <Input type="email" name="email" required="required" />
-            <Placeholder>E-mail</Placeholder>
+            <Placeholder>Email</Placeholder>
           </InputWrapper>
           <InputWrapper>
             <Input type="password" name="password" required="required" />

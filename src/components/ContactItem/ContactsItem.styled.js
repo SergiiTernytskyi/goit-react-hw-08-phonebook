@@ -18,15 +18,33 @@ export const Wrapper = styled.div`
 
 export const ContactName = styled.span`
   display: inline-block;
+  font-size: ${p => p.theme.fontSizes.s}px;
   color: ${p => p.theme.colors.text};
   font-weight: ${p => p.theme.fontWeights.bold};
-  min-width: 75px;
+  min-width: 70px;
+
+  @media (min-width: 768px) {
+    font-size: ${p => p.theme.fontSizes.m}px;
+  }
+
+  @media (min-width: 768px) {
+    font-size: ${p => p.theme.fontSizes.l}px;
+  }
 `;
 
 export const ContactPhone = styled.span`
   display: inline-block;
+  font-size: ${p => p.theme.fontSizes.s}px;
   color: ${p => p.theme.colors.text};
-  min-width: 75px;
+  min-width: 70px;
+
+  @media (min-width: 768px) {
+    font-size: ${p => p.theme.fontSizes.m}px;
+  }
+
+  @media (min-width: 768px) {
+    font-size: ${p => p.theme.fontSizes.l}px;
+  }
 `;
 
 export const IconButton = styled.button`
